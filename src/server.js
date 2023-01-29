@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
+
 
 const route = require('./routes/route');
 const mongoose = require('mongoose');

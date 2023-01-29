@@ -2,7 +2,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 let userModel = require("../models/userModel");
 
-
 let createUser = async function (req, res) {
     try {
         const requestBody ={
@@ -33,7 +32,6 @@ const login = async function(req,res){
         const requestBody = req.body;
         const { email, password } = requestBody;
        
-        // let password = req.body.password;
 
         const user = await userModel.findOne({email});
        
