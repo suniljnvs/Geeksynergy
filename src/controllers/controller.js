@@ -99,4 +99,21 @@ const deleteUser = async function(req,res){
     }
 }
 
-module.exports = {createUser, login, getUsers , updateUser ,deleteUser}
+const forgetPassword = async function(req,res){
+    try {
+        const requestBody = req.body
+        const {email} = requestBody;
+
+        const data = await userModel.findOne({email:email});
+        if(!data){
+            throw new Error("This email not registerd")
+        }
+
+        
+    } catch (error) {
+        res.status(500).send({ status: false, message: error.message })
+    }
+}
+
+
+module.exports = {createUser, login, getUsers , updateUser ,deleteUser,forgetPassword}

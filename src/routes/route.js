@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 
-const { createUser,login, getUsers , updateUser ,deleteUser } = require("../controllers/Controller");
+const { createUser,login, getUsers , updateUser ,deleteUser,forgetPassword } = require("../controllers/Controller");
 
 
 
@@ -15,6 +15,7 @@ router.post("/login", login)
 router.get("/get-user", getUsers)
 router.put("/update-user", updateUser)
 router.delete("/delete-user", deleteUser)
+router.delete("/forget-password", forgetPassword)
 
 
 
